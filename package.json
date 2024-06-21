@@ -5,7 +5,7 @@
   "files": [
     "dist"
   ],
-  "description": "Processes string arrays at the byte level by modeling them with a cursor mechanism in javascript.",
+  "description": "Makes logical operations on sets of strings using a cursor technique by treating them as streams.",
   "main": "./dist/ascii-byte-stream.umd.cjs",
   "module": "./dist/ascii-byte-stream.js",
   "exports": {
@@ -28,10 +28,8 @@
   "keywords": [
     "stream",
     "byte",
-    "stream",
     "cursor",
-    "regular",
-    "expressions"
+    "regular expressions"
   ],
   "author": "Ismail Ceylan",
   "license": "MIT",
