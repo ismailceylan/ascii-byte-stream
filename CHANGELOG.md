@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.3...v0.0.4) (2024-06-21)
+
+
+### Features
+
+* add getUntil method ([aa85a2b](https://github.com/ismailceylan/ascii-byte-stream/commit/aa85a2b2734696a2ac72339163d8f77508300681))
+* add slice method ([2532b94](https://github.com/ismailceylan/ascii-byte-stream/commit/2532b9439974805c99ba951d12595bc5a8ba0c63))
+* add startTransaction method ([a5611ca](https://github.com/ismailceylan/ascii-byte-stream/commit/a5611caddd1ec5f1182dc1684939dcce372376bc))
+
 ### [0.0.3](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.2...v0.0.3) (2024-06-21)
 
 
