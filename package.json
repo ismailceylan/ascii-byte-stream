@@ -1,10 +1,25 @@
 {
   "name": "@iceylan/ascii-byte-stream",
   "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
   "description": "Processes string arrays at the byte level by modeling them with a cursor mechanism in javascript.",
-  "main": "index.js",
+  "main": "./dist/ascii-byte-stream.umd.cjs",
+  "module": "./dist/ascii-byte-stream.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ascii-byte-stream.js",
+      "require": "./dist/ascii-byte-stream.umd.cjs"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "release": "standard-version",
+    "publish-package": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -23,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/ismailceylan/ascii-byte-stream/issues"
   },
-  "homepage": "https://github.com/ismailceylan/ascii-byte-stream#readme"
+  "homepage": "https://github.com/ismailceylan/ascii-byte-stream#readme",
+  "devDependencies": {
+    "vite": "^5.3.1"
+  }
 }
