@@ -1,0 +1,27 @@
+{
+  "name": "@iceylan/ascii-byte-stream",
+  "version": "0.0.1",
+  "description": "Processes string arrays at the byte level by modeling them with a cursor mechanism in javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismailceylan/ascii-byte-stream.git"
+  },
+  "keywords": [
+    "stream",
+    "byte",
+    "stream",
+    "cursor",
+    "regular",
+    "expressions"
+  ],
+  "author": "Ismail Ceylan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ismailceylan/ascii-byte-stream/issues"
+  },
+  "homepage": "https://github.com/ismailceylan/ascii-byte-stream#readme"
+}
