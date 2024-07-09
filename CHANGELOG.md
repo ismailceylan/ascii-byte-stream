@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.4...v0.0.5) (2024-07-09)
+
+
+### Features
+
+* add consume method ([ce6fd6b](https://github.com/ismailceylan/ascii-byte-stream/commit/ce6fd6b35d95e5694e1ba54df12405c57f5b44d7))
+* add jumpTo method ([d8daff5](https://github.com/ismailceylan/ascii-byte-stream/commit/d8daff5688d2f34cad03adc98ddef3f4ba3ad7bb))
+* add move and moveTo methods ([afcf3e6](https://github.com/ismailceylan/ascii-byte-stream/commit/afcf3e6520b9c1818a2fb6aa46e0579c16706ba4))
+* add multi target support to the consume method ([08706e6](https://github.com/ismailceylan/ascii-byte-stream/commit/08706e6414cf01745263f12f4d75d2edc4c6ec39))
+
+
+### Bug Fixes
+
+* when slice gets Infinity, it makes cursor Infinity ([5958dc6](https://github.com/ismailceylan/ascii-byte-stream/commit/5958dc63e546f27d1ac3e87fbcc2d0e3b1bd178d))
+* wrong cursor position calculation of getUntil method ([8e6b7b5](https://github.com/ismailceylan/ascii-byte-stream/commit/8e6b7b5243cbcbac00bf4a23bd487d16c2be4c96))
+
 ### [0.0.4](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.3...v0.0.4) (2024-06-21)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@iceylan/ascii-byte-stream",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "files": [
     "dist"
@@ -12,6 +12,9 @@
     ".": {
       "import": "./dist/ascii-byte-stream.js",
       "require": "./dist/ascii-byte-stream.umd.cjs"
+    },
+    "./uncompiled": {
+      "import": "./lib/ascii-byte-stream.js"
     }
   },
   "scripts": {
