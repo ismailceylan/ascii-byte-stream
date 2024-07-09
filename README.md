@@ -74,7 +74,7 @@ stream.length; // 13
 stream.raw.length; // 13
 ```
 
-### Methods
+## Methods
 `ASCIIByteStream` has the following methods:
 
 ### matches
@@ -202,7 +202,7 @@ stream.cursor; // 7
 ```
 
 ### moveTo
-It teleports the cursor to the given position. It returns the stream's itself. Its and alias for `stream.cursor = position` syntax.
+It teleports the cursor to the given position. It returns the stream's itself. Its an alias for `stream.cursor = position` syntax.
 
 ```js
 stream.current; // "e"
@@ -257,4 +257,43 @@ It supports more than one target. With this, it will consume if the characters a
 //    v  <-- cursor is here
 "Hello\s\t\t\s\sWorld!".consume([ "\s", "\t" ]); // \s\t\t\s\s
 //              ^  <-- cursor is here now
+```
+
+## Iteration
+We can easily iterate over the stream.
+
+### do-while loop
+Since the library has `current` property to indicate the current character, we can trust it's undefined values to break `do-while` loops.
+
+```js
+let stack = "";
+
+do
+{
+	// we can consume current character
+	stack += stream.current;
+}
+while( stream.next !== undefined );
+
+console.log( stack );
+// Hello World!
+```
+
+### while loop
+We can easily use `while` loop to iterate over the stream.
+
+```js
+let stack = "";
+
+while( stream.current !== undefined )
+{
+	// we can consume current character
+	stack += stream.current;
+
+	// we should move the cursor
+	stream.next;
+}
+
+console.log( stack );
+// Hello World!
 ```
