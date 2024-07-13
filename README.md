@@ -152,8 +152,8 @@ stream.cursor; // 4
 
 rollback();
 
-stream.current; // "H"
-stream.cursor; // 0
+stream.current; // "e"
+stream.cursor; // 1
 ```
 
 ### getUntil
@@ -263,7 +263,7 @@ It supports more than one target. With this, it will consume if the characters a
 We can easily iterate over the stream.
 
 ### do-while loop
-Since the library has `current` property to indicate the current character, we can trust it's undefined values to break `do-while` loops.
+Since the library returns undefined values for `next` property to indicate the cursor has reached the end of the stream, we can use it a `do-while` braker. This kind of loop will walk over all the characters in the stream individually unless we move the cursor manually inside the loop.
 
 ```js
 let stack = "";
@@ -280,7 +280,7 @@ console.log( stack );
 ```
 
 ### while loop
-We can easily use `while` loop to iterate over the stream.
+We can also use `while` loop to iterate over the stream. This kind of loop will give us opportunity to move the cursor when we need to and move as long as we need to.
 
 ```js
 let stack = "";
