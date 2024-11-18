@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.5...v0.0.6) (2024-11-18)
+
+
+### Features
+
+* add beginning and ending support ([480adef](https://github.com/ismailceylan/ascii-byte-stream/commit/480adefce3b79a6d619e840d6acb9c1848ded4ee))
+
 ### [0.0.5](https://github.com/ismailceylan/ascii-byte-stream/compare/v0.0.4...v0.0.5) (2024-07-09)
 
 
