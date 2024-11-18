@@ -1,13 +1,25 @@
 var h = Object.defineProperty;
-var u = (t, r, s) => r in t ? h(t, r, { enumerable: !0, configurable: !0, writable: !0, value: s }) : t[r] = s;
-var c = (t, r, s) => u(t, typeof r != "symbol" ? r + "" : r, s);
-class n {
+var n = (t, r, s) => r in t ? h(t, r, { enumerable: !0, configurable: !0, writable: !0, value: s }) : t[r] = s;
+var c = (t, r, s) => n(t, typeof r != "symbol" ? r + "" : r, s);
+class e {
   /**
    * Initialize the stream.
    * 
    * @param {string} raw string data to get streamed
    */
   constructor(r) {
+    /**
+     * The symbol of "beginning".
+     * 
+     * @type {Symbol}
+     */
+    c(this, "BEGINNING", Symbol("beginning"));
+    /**
+     * The symbol of "ending".
+     * 
+     * @type {Symbol}
+     */
+    c(this, "ENDING", Symbol("ending"));
     /**
      * String data to get streamed.
      * 
@@ -25,7 +37,7 @@ class n {
   /**
    * Get the current character.
    * 
-   * @type {string}
+   * @type {string|undefined}
    */
   get current() {
     return this.raw[this.cursor];
@@ -33,7 +45,7 @@ class n {
   /**
    * Returns the next character in the stream and advances the cursor.
    *
-   * @type {string}
+   * @type {string|undefined}
    */
   get next() {
     return this.raw[++this.cursor];
@@ -99,21 +111,34 @@ class n {
     ) === r;
   }
   /**
-   * Calculates the distance to the specified needle in the stream.
+   * Calculates there are how many characters between the current
+   * position and the specified needle in the stream.
+   * 
+   * If the needle is not found, Infinity will be returned.
    * 
    * ```js
    * // v  <-- cursor is here
    * "lorem ipsum".distanceTo( "p" ); // 4
    * ```
-   *
-   * @param {string} needle - The string to search for in the stream.
+   * 
+   * It also supports the "beginning" and "ending" symbols.
+   * 
+   * ```js
+   * //   v  <-- cursor is here
+   * "lorem ipsum".distanceTo( stream.BEGINNING ); // 4
+   * "lorem ipsum".distanceTo( stream.ENDING ); // 6
+   * ```
+   * 
+   * @param {string|Symbol} needle - The string to search for in the
+   * stream or the symbol "beginning" or "ending".
    * @returns {number} The index representing the distance to the needle.
    */
   distanceTo(r) {
-    return this.raw.indexOf(
+    const s = r === this.BEGINNING ? this.cursor : r === this.ENDING ? this.raw.length - this.cursor - 1 : this.raw.indexOf(
       r,
       this.cursor
     ) - this.cursor - 1;
+    return s < 0 ? 1 / 0 : s;
   }
   /**
    * Returns an array of arrays, where each inner array contains a
@@ -122,7 +147,7 @@ class n {
    * The returned array is sorted in ascending order based on the distance.
    *
    * @param {Array<string>} needles - An array of needles to find the closest match for.
-   * @returns {Array<Array<string, number>>}
+   * @returns {[string, number][]}
    */
   closest(r) {
     return r.map(
@@ -184,10 +209,11 @@ class n {
       throw new RangeError(
         `Cannot slice backwards from ${this.cursor} to ${r}.`
       );
-    return this.raw.slice(
+    const s = this.raw.slice(
       this.cursor,
-      this.cursor += r
+      this.cursor + r
     );
+    return this.cursor = r === 1 / 0 ? this.raw.length : this.cursor + r, s;
   }
   /**
    * Moves the cursor by the specified length from the current position.
@@ -274,5 +300,5 @@ class n {
   }
 }
 export {
-  n as default
+  e as default
 };
